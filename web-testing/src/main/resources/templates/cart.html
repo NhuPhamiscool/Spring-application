@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Hello this is your shopping cart</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="/cart" method="post" th:each="item : ${items}">
+        <label for="fname" th:text="${item.key}">Item name:</label>
+        <input type="text" id="fname" name="fname" th:placeholder="${item.value}"><br><br>
+        
+    </form>
+    <!-- <input href="/cart" type="submit" value="update another count"> -->
+    <button type="button">
+        <a href="/cart">Submit another one</a>
+        <!-- <a href="/newname">Add new item</a> -->
+    </button>
+</body>
+</html>

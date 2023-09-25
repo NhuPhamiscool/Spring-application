@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	
+    <form action="/delname"  method="post">
+        
+        <tr th:each="item : ${items}">
+            <p>
+                <!-- <input type="checkbox" id="removeItem" name="removeItem" checked="true"> -->
+                <!-- <input type="checkbox" name="removeItem" value="on" checked="checked"> -->
+                <!-- <input type="hidden" name="removeItem" value="false" check="unchecked"> -->
+                <!-- <input type="hidden" name="removeItem" value="false" check="unchecked"> -->
+                <!-- <input type="hidden" name="removeItem" value="false"/> -->
+                <input type="hidden" name="removeItem" value="false" />
+                <input type="checkbox" name="removeItem" value="true" checked >
+                <!-- <input type="hidden" name="removeItem" value="no"/> -->
+                <!-- <input type="hidden" name="removeItem" value="false"/> -->
+                <!-- <input type="hidden" name="removeItem" value="false" check="unchecked"> -->
+                <!-- <input type="hidden" name="removeItem" value="off" checked="false"> -->
+                <label for="removeItem" name= "removeItem" th:text="'Item name: ' + ${item.key} + ' ' + 'Cost: ' + '$' + ${item.value}">Item name:</label></p>
+        </tr>
+    	
+    <button type="submit">Remove!</button>
+    
+    </form>
+</body>
+</html>
